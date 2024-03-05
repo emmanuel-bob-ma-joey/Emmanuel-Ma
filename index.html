@@ -20,13 +20,26 @@
       <a href="#course-notes">Course Notes</a>
     </nav>
     <section id="about" class="about">
-      <img
-        class="animate-me"
-        src="data/profile.jpg"
-        alt="Emmanuel Ma"
-        width="325"
-        height="445"
-      />
+      <div class="image-container">
+        <img
+          class="animate-me"
+          src="data/profile.jpg"
+          alt="Emmanuel Ma"
+          width="325"
+          height="445"
+        />
+        <!-- <p class="image-caption animate-me">@ Tipsy Cow</p> -->
+
+        <a
+          class="image-caption animate-me"
+          href="https://www.instagram.com/tipsycowmtl/"
+          target="_blank"
+          style="display: block"
+          >@Tipsy Cow</a
+        >
+
+        <!-- Caption for the image -->
+      </div>
       <div class="intro-text">
         <p class="animate-me">
           Hi, I'm Emmanuel! I'm a 3rd year software engineering student @McGill
@@ -38,8 +51,102 @@
         </p>
       </div>
     </section>
-    <section id="experience">
-      <h1>Experience</h1>
+    <section id="experience" class="timeline">
+      <h1 class="timeline-title">Experience</h1>
+      <!-- <ul>
+        <li>
+          <div class="timeline-content">
+            <h3>Job Title 1</h3>
+            <span>Company Name, Dates</span>
+            <p>Description of the role and achievements.</p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content">
+            <h3>Job Title 2</h3>
+            <span>Company Name, Dates</span>
+            <p>Description of the role and achievements.</p>
+          </div>
+        </li>
+
+      </ul> -->
+      <ul>
+        <li class="hide">
+          <div class="timeline-content">
+            <h3>Job Title 1</h3>
+            <span>Company Name, Dates</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content animate-me">
+            <h3>Associate Application Developer</h3>
+            <span>ADP, Incoming</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content animate-me">
+            <h3>Workshop Lead</h3>
+            <span>Compete McGill, Sep 2023</span>
+          </div>
+        </li>
+        <li class="hide">
+          <div class="timeline-content">
+            <h3>Job Title 1</h3>
+            <span>Company Name, Dates</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content animate-me">
+            <h3>VP Events</h3>
+            <span>Classical Music Club, Sep 2023</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content animate-me">
+            <h3>Global Product and Technology Intern</h3>
+            <span>ADP, June-Aug 2023</span>
+            <p>Optimized ML solutions for client onboarding.</p>
+          </div>
+        </li>
+        <li class="hide">
+          <div class="timeline-content">
+            <h3>Job Title 3</h3>
+            <span>Company Name, Dates</span>
+          </div>
+        </li>
+
+        <li>
+          <div class="timeline-content animate-me">
+            <h3>Software Engineer</h3>
+            <span
+              >Mood Disorder Society of Canada (MIRA Chatbot), May-Aug
+              2022</span
+            >
+            <p>
+              Implemented end-to-end chatbot speech recognition capabilities.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content animate-me">
+            <h3>Computer Science Helpdesk Tutor</h3>
+            <span>CSUS McGill, Jan 2022</span>
+          </div>
+        </li>
+        <li class="hide">
+          <div class="timeline-content">
+            <h3>1</h3>
+            <span>CSUS McGill, Jan 2023</span>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-content animate-me">
+            <h3>Development Coordinator</h3>
+            <span>Enactus McGill, Jan 2021</span>
+          </div>
+        </li>
+        <!-- Repeat for other experiences -->
+      </ul>
     </section>
     <section id="projects">
       <h1>Projects</h1>

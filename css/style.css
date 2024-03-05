@@ -16,7 +16,18 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Use the full height of the viewport */
+  min-height: 100vh; /* Use the full height of the viewport */
+}
+
+.image-container {
+  text-align: center; /* Center the image and caption */
+  margin-bottom: 20px; /* Space below the image container */
+}
+
+.image-caption {
+  color: #666; /* Caption text color */
+  font-size: 14px; /* Caption text size */
+  margin-top: 8px; /* Space between the image and the caption */
 }
 
 .intro-text {
@@ -32,6 +43,7 @@ section {
   gap: 50px; /* Space between navbar items */
   position: fixed; /* Fixed position */
   top: 4em; /* Align to the top */
+  z-index: 3;
 }
 
 .minimal-navbar a {
@@ -39,10 +51,94 @@ section {
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
-  transition: color 0.3s;
+  /* transition: color 0.3s; */
   border-bottom: 2px solid #333; /* Add underline with 2px solid border */
+  background-color: #fff; /* Match the background color of your page */
 }
 
 .minimal-navbar a:hover {
   color: #007bff;
+}
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto; /* Increase margin to give space for the title */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #333;
+  z-index: 1; /* Ensure the line is above the background but below the text */
+}
+
+.timeline-title {
+  text-align: center;
+  position: relative;
+  z-index: 2; /* Higher z-index to ensure the text appears above the line */
+  background-color: #fff; /* Match the background color of your page */
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0 20px; /* Add horizontal padding to ensure background covers the line */
+}
+
+.timeline ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0; /* Adjust top margin to space items from the title */
+}
+
+.timeline ul li {
+  position: relative;
+  width: 45%; /* Adjust based on your design */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Align items on the left and right of the timeline */
+.timeline ul li:nth-child(odd) {
+  float: left;
+  clear: left;
+  transform: translateX(-30px); /* Adjust for alignment */
+}
+
+.timeline ul li:nth-child(even) {
+  float: right;
+  clear: right;
+  transform: translateX(30px); /* Adjust for alignment */
+}
+
+.timeline ul li:not(.hide)::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #333;
+  z-index: 1;
+}
+
+/* Position dots correctly for left and right items */
+.timeline ul li:nth-child(odd)::before {
+  right: -5px; /* Half of the dot's width to align it with the line */
+}
+
+.timeline ul li:nth-child(even)::before {
+  left: -5px; /* Half of the dot's width to align it with the line */
+}
+
+.timeline-content {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.hide {
+  visibility: hidden;
 }
