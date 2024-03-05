@@ -11,30 +11,57 @@
   <body>
     <!-- <script src="index.js"></script> -->
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-        >&times;</a
-      >
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div>
+    <!-- Place this inside the <body> tag -->
+    <nav id="navbar" class="minimal-navbar">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#music">Music</a>
+      <a href="#course-notes">Course Notes</a>
+    </nav>
+    <section id="about" class="about">
+      <img
+        class="animate-me"
+        src="data/profile.jpg"
+        alt="Emmanuel Ma"
+        width="325"
+        height="445"
+      />
+      <div class="intro-text">
+        <p class="animate-me">
+          Hi, I'm Emmanuel! I'm a 3rd year software engineering student @McGill
+          with a minor in philosophy, currently interning at Automatic Data
+          Processing (ADP). During the school year I am a helpdesk tutor for
+          CSUS McGill and workshop lead for the competitive programming club. In
+          my free time I enjoy running, competing for the McGill Poker team,
+          playing table tennis, and practicing piano or violin.
+        </p>
+      </div>
+    </section>
+    <section id="experience">
+      <h1>Experience</h1>
+    </section>
+    <section id="projects">
+      <h1>Projects</h1>
+    </section>
+    <section id="music">
+      <h1>Music</h1>
+    </section>
+    <section id="course-notes">
+      <h1>Notes</h1>
+    </section>
 
-    <span style="font-size: 30px; cursor: pointer" onclick="openNav()"
-      >&#9776; Open</span
-    >
-
-    <p>Rachmaninoff: Piano Sonata No.2, Op.36</p>
-    <p>Liszt: Sonata in B Minor</p>
-    <p>VULFPECK - Animal Spirits</p>
-    <p>Daniel Caesar - Please Do Not Lean</p>
-    <p>Maaya Sakamoto feat. Steve Conte - THE GARDEN OF EVERYTHING</p>
-    <p>HYNN(박혜원) - The Lonely Bloom Stands Alone(시든 꽃에 물을 주듯)</p>
-    <p>Muse - Supermassive Black Hole</p>
-
-    <p class="animate-me">This is a paragraph to animate.</p>
-    <p class="animate-me">This is another animated paragraph.</p>
+    <!-- <p class="animate-me">Rachmaninoff: Piano Sonata No.2, Op.36</p>
+    <p class="animate-me">Liszt: Sonata in B Minor</p>
+    <p class="animate-me">VULFPECK - Animal Spirits</p>
+    <p class="animate-me">Daniel Caesar - Please Do Not Lean</p>
+    <p class="animate-me">
+      Maaya Sakamoto feat. Steve Conte - THE GARDEN OF EVERYTHING
+    </p>
+    <p class="animate-me">
+      HYNN(박혜원) - The Lonely Bloom Stands Alone(시든 꽃에 물을 주듯)
+    </p>
+    <p class="animate-me">Muse - Supermassive Black Hole</p> -->
 
     <script src="js/index.js"></script>
   </body>
