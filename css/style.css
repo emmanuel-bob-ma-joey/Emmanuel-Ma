@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap");
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #f0f0f0; /* Light grey background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Use the full height of the viewport */
+  margin: 0; /* Remove default margin */
+}
+
+p {
+  opacity: 0; /* Start with p tags invisible */
+  animation-name: fadeInUp; /* Reference the defined keyframes */
+  animation-duration: 1s; /* Duration of the animation */
+  animation-fill-mode: forwards; /* Keep the final state after animation ends */
+}
+
+.sidebar {
+  height: 100%;
+  width: 0; /* Sidebar width is 0 by default */
+  position: fixed; /* Sidebar position */
+  z-index: 1; /* Stay on top of other content */
+  top: 0;
+  left: 0;
+  background-color: #d99b9b; /* Sidebar background color */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  transition: 0.5s; /* Smooth transition for opening/closing */
+  padding-top: 60px; /* Top padding */
+}
+
+.sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
