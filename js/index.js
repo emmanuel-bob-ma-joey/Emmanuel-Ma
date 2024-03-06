@@ -99,3 +99,50 @@ document.addEventListener("DOMContentLoaded", () => {
 //     // Initial check in case elements are already in view on load
 //     animateElements();
 //   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".minimal-navbar a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("mouseenter", (e) => {
+      anime({
+        targets: e.target,
+        backgroundColor: "#f08c27", // Target background color on hover
+        duration: 300, // Duration of the animation
+        easing: "linear", // Easing function
+      });
+    });
+
+    link.addEventListener("mouseleave", (e) => {
+      anime({
+        targets: e.target,
+        backgroundColor: "#fff", // Revert to original background color
+        duration: 300, // Duration of the animation
+        easing: "linear", // Easing function
+      });
+    });
+  });
+});
+
+fetch("http://localhost:3000/spotify-api", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    endpoint: "me/tracks",
+    accessToken: "dummy", // Ideally, this should be obtained securely through OAuth flow
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data); // Process and display your data here
+    const tracksContainer = document.getElementById("tracks");
+    data.items.forEach((item) => {
+      const trackElement = document.createElement("div");
+      trackElement.textContent = `${item.track.name} by ${item.track.artists
+        .map((artist) => artist.name)
+        .join(", ")}`;
+      tracksContainer.appendChild(trackElement);
+    });
+  });

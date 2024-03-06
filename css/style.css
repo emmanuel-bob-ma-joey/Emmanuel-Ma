@@ -3,7 +3,8 @@
 body,
 html {
   font-family: "Roboto Mono", monospace;
-  background-color: #f0f0f0; /* Light grey background */
+  background-color: #f0f0f0;
+  /* background: linear-gradient(to bottom right, #f0f0f0 0%, #df9c9c 100%); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,20 +45,23 @@ section {
   position: fixed; /* Fixed position */
   top: 4em; /* Align to the top */
   z-index: 3;
+  /* transition: color 0.3s, background-color 0.3s;
+  padding: 5px 10px;
+  border-radius: 5px;  */
 }
 
 .minimal-navbar a {
-  color: #333;
+  color: #333333;
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
   /* transition: color 0.3s; */
-  border-bottom: 2px solid #333; /* Add underline with 2px solid border */
-  background-color: #fff; /* Match the background color of your page */
+  border-bottom: 2px solid #333;
+  background-color: #fff;
 }
 
 .minimal-navbar a:hover {
-  color: #007bff;
+  background-color: #e7f1ff; /* New background color on hover */
 }
 .timeline {
   position: relative;
@@ -141,4 +145,59 @@ section {
 
 .hide {
   visibility: hidden;
+}
+
+.company-logo {
+  width: 50px; /* Adjust based on your design */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+  vertical-align: middle; /* Align with the text */
+}
+
+.music {
+  width: 50%;
+}
+
+.projects {
+  width: 50%;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px;
+  justify-content: center;
+}
+
+.project-card {
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.quote {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.music-links {
+  text-align: center;
 }
