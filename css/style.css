@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap");
 
-body,
-html {
+body {
   font-family: "Roboto Mono", monospace;
   background-color: #f0f0f0;
   /* background: linear-gradient(to bottom right, #f0f0f0 0%, #df9c9c 100%); */
@@ -159,14 +158,19 @@ section {
 }
 
 .projects {
-  width: 50%;
+  width: 90%;
+  /* background-color: aqua; */
 }
 
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2px;
-  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  justify-content: center; /* Centers the items horizontally */
+  gap: 20px;
+
+  width: 100%;
+  /* background-color: #007bff; */
 }
 
 .project-card {
