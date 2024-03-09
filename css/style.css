@@ -23,7 +23,11 @@ section {
   text-align: center; /* Center the image and caption */
   margin-bottom: 20px; /* Space below the image container */
 }
-
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the space between the links as needed */
+}
 .image-caption {
   color: #666; /* Caption text color */
   font-size: 14px; /* Caption text size */
