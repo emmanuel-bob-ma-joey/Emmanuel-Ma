@@ -57,10 +57,19 @@ section {
   /* transition: color 0.3s; */
   border-bottom: 2px solid #333;
   background-color: #fff;
+<<<<<<< HEAD
 }
 
 .minimal-navbar a:hover {
   background-color: #e7f1ff; /* New background color on hover */
+=======
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.minimal-navbar a:hover {
+  transform: scale(1.1); /* Makes the link slightly larger */
+  background-color: #f08c27; /* Changes background color */
+>>>>>>> 44dc136 (add wav)
 }
 .timeline {
   position: relative;

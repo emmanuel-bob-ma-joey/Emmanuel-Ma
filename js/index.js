@@ -1,11 +1,11 @@
-anime({
-  targets: ".animate-me",
-  opacity: [0, 1], // Fade in from opacity 0 to 1
-  translateY: [100, 0], // Move from 100px below to original position
-  easing: "easeOutElastic", // Use an exponential easing function for a smooth effect
-  duration: 1500, // Animation duration in milliseconds
-  delay: anime.stagger(200), // Delay each <p> animation by 200ms
-});
+// anime({
+//   targets: ".animate-me",
+//   opacity: [0, 1], // Fade in from opacity 0 to 1
+//   translateY: [100, 0], // Move from 100px below to original position
+//   easing: "easeOutElastic", // Use an exponential easing function for a smooth effect
+//   duration: 1500, // Animation duration in milliseconds
+//   delay: anime.stagger(200), // Delay each <p> animation by 200ms
+// });
 anime({
   targets: "#navbar",
   translateY: [-200, 0], // Start from -200px to 0px
@@ -13,6 +13,39 @@ anime({
   easing: "easeOutElastic",
   elasticity: 500,
   duration: 1500, // Adjust duration as needed
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Define the callback function
+  const animateOnScroll = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        anime({
+          targets: entry.target,
+          opacity: [0, 1],
+          translateY: [100, 0],
+          easing: "easeOutElastic",
+          duration: 1500,
+          //   duration: 1500, // Animation duration in milliseconds
+          delay: anime.stagger(200), // Delay each <p> animation by 200ms
+        });
+        // Optional: Unobserve the element after animating
+        observer.unobserve(entry.target);
+      }
+    });
+  };
+
+  // Create the observer
+  const observer = new IntersectionObserver(animateOnScroll, {
+    root: null, // Use the viewport as the root
+    rootMargin: "0px",
+    threshold: 0.5, // Adjust if needed
+  });
+
+  // Observe elements with the class 'animate-me'
+  document.querySelectorAll(".animate-me").forEach((el) => {
+    observer.observe(el);
+  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         opacity: opacity,
         easing: "linear",
         duration: 1, // Apply changes instantly
+        delay: anime.stagger(200), // Delay each <p> animation by 200ms
       });
     });
   });
