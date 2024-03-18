@@ -167,16 +167,15 @@ fetch("http://localhost:3000/spotify-api", {
     endpoint: "me/tracks",
     accessToken: "dummy", // Ideally, this should be obtained securely through OAuth flow
   }),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data); // Process and display your data here
-    const tracksContainer = document.getElementById("tracks");
-    data.items.forEach((item) => {
-      const trackElement = document.createElement("div");
-      trackElement.textContent = `${item.track.name} by ${item.track.artists
-        .map((artist) => artist.name)
-        .join(", ")}`;
-      tracksContainer.appendChild(trackElement);
-    });
-  });
+}).then((response) => response.json());
+// .then((data) => {
+//   console.log(data); // Process and display your data here
+//   const tracksContainer = document.getElementById("tracks");
+//   data.items.forEach((item) => {
+//     const trackElement = document.createElement("div");
+//     trackElement.textContent = `${item.track.name} by ${item.track.artists
+//       .map((artist) => artist.name)
+//       .join(", ")}`;
+//     tracksContainer.appendChild(trackElement);
+//   });
+// });
