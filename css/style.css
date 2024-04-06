@@ -45,12 +45,13 @@ section {
   align-items: center; /* Center navbar items vertically */
   flex-direction: row; /* Stack items vertically */
   gap: 50px; /* Space between navbar items */
-  position: fixed; /* Fixed position */
+  /*position: fixed; /* Fixed position */
   top: 4em; /* Align to the top */
   z-index: 3;
-  /* transition: color 0.3s, background-color 0.3s;
+  /* transition: color 0.3s, background-color 0.3s;*/
   padding: 5px 10px;
-  border-radius: 5px;  */
+  border-radius: 5px;
+  margin-top: 25px;
 }
 
 .minimal-navbar a {
