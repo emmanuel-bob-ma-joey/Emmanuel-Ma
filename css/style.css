@@ -19,6 +19,11 @@ section {
   min-height: 100vh; /* Use the full height of the viewport */
 }
 
+.about {
+  justify-content: flex-start;
+  padding-top: 5vh; /* Adjust this value to control how high up it appears */
+}
+
 .image-container {
   text-align: center; /* Center the image and caption */
   margin-bottom: 20px; /* Space below the image container */
@@ -162,10 +167,301 @@ section {
 
 .music {
   width: 50%;
+  min-height: auto; /* Remove full viewport height */
+  padding: 40px 0; /* Add some padding instead */
+}
+
+.strava {
+  width: 50%;
+}
+
+.strava-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 3em auto 0 auto; /* Add top margin for spacing */
+}
+
+.strava-summary-widget {
+  width: 100%;
+  max-width: 500px;
+  background: linear-gradient(135deg, #fc4c02 0%, #ff6b35 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(252, 76, 2, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.strava-summary-widget:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(252, 76, 2, 0.3);
+}
+
+.strava-header {
+  padding: 20px 20px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.strava-header h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.time-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.time-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.time-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.time-btn.active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #fc4c02;
+  font-weight: 600;
+}
+
+.strava-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-icon {
+  font-size: 1.5em;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 1.3em;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  font-size: 0.8em;
+  opacity: 0.9;
+}
+
+.strava-recent {
+  padding: 0 20px 20px;
+}
+
+.strava-recent h4 {
+  margin: 0 0 15px 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.activities-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.activity-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-name {
+  font-weight: 600;
+  font-size: 0.9em;
+}
+
+.activity-stats {
+  font-size: 0.8em;
+  opacity: 0.8;
+  text-align: right;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 15px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.strava-footer {
+  padding: 15px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.strava-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.strava-link:hover {
+  opacity: 0.8;
+}
+
+.strava-auth-prompt {
+  text-align: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+.strava-auth-prompt p {
+  margin: 0 0 15px 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.strava-auth-btn {
+  background: rgba(255, 255, 255, 0.9);
+  color: #fc4c02;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.strava-auth-btn:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.strava-placeholder {
+  text-align: center;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 8px;
+  color: #6c757d;
+}
+
+.strava-placeholder p {
+  margin: 10px 0;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .strava {
+    width: 90%;
+  }
+
+  .strava-container {
+    max-width: 100%;
+  }
+
+  .strava-summary-widget {
+    max-width: 100%;
+  }
+
+  .strava-stats {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .strava-summary-widget {
+    margin: 0 10px;
+  }
+
+  .strava-header {
+    padding: 15px 15px 10px;
+  }
+
+  .strava-stats {
+    padding: 15px;
+  }
+
+  .strava-recent {
+    padding: 0 15px 15px;
+  }
+
+  .strava-footer {
+    padding: 10px 15px;
+  }
 }
 
 .projects {
   width: 90%;
+  min-height: auto; /* Remove full viewport height */
+  padding: 40px 0; /* Add some padding instead */
   /* background-color: aqua; */
 }
 
@@ -211,128 +507,4 @@ section {
 
 .music-links {
   text-align: center;
-}
-
-.cube-container {
-  width: 200px;
-  height: 200px;
-  perspective: 1500px;
-  margin: 100px auto;
-}
-
-.outer-cube {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.1s;
-}
-
-.outer-cube .face {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 2px solid #3498db;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  color: white;
-  opacity: 0.8;
-}
-
-.inner-cube-wrapper {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-style: preserve-3d;
-  animation: rotate-inner 20s infinite linear reverse;
-}
-
-.inner-cube {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-}
-
-.inner-cube .face {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border: 2px solid #e74c3c;
-  opacity: 0.8;
-}
-
-/* Outer cube face colors and gradients */
-.outer-cube .front {
-  background: linear-gradient(45deg, #3498db, #2980b9);
-  transform: rotateY(0deg) translateZ(100px);
-}
-.outer-cube .back {
-  background: linear-gradient(45deg, #2980b9, #3498db);
-  transform: rotateY(180deg) translateZ(100px);
-}
-.outer-cube .right {
-  background: linear-gradient(45deg, #2980b9, #3498db);
-  transform: rotateY(90deg) translateZ(100px);
-}
-.outer-cube .left {
-  background: linear-gradient(45deg, #3498db, #2980b9);
-  transform: rotateY(-90deg) translateZ(100px);
-}
-.outer-cube .top {
-  background: linear-gradient(45deg, #3498db, #2980b9);
-  transform: rotateX(90deg) translateZ(100px);
-}
-.outer-cube .bottom {
-  background: linear-gradient(45deg, #2980b9, #3498db);
-  transform: rotateX(-90deg) translateZ(100px);
-}
-
-/* Inner cube face colors and gradients */
-.inner-cube .front {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-  transform: rotateY(0deg) translateZ(50px);
-}
-.inner-cube .back {
-  background: linear-gradient(45deg, #c0392b, #e74c3c);
-  transform: rotateY(180deg) translateZ(50px);
-}
-.inner-cube .right {
-  background: linear-gradient(45deg, #c0392b, #e74c3c);
-  transform: rotateY(90deg) translateZ(50px);
-}
-.inner-cube .left {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-  transform: rotateY(-90deg) translateZ(50px);
-}
-.inner-cube .top {
-  background: linear-gradient(45deg, #e74c3c, #c0392b);
-  transform: rotateX(90deg) translateZ(50px);
-}
-.inner-cube .bottom {
-  background: linear-gradient(45deg, #c0392b, #e74c3c);
-  transform: rotateX(-90deg) translateZ(50px);
-}
-
-@keyframes rotate-outer {
-  from {
-    transform: rotateX(0) rotateY(0);
-  }
-  to {
-    transform: rotateX(360deg) rotateY(360deg);
-  }
-}
-
-@keyframes rotate-inner {
-  from {
-    transform: translate(-50%, -50%) rotateX(0) rotateY(0);
-  }
-  to {
-    transform: translate(-50%, -50%) rotateX(-360deg) rotateY(-360deg);
-  }
 }

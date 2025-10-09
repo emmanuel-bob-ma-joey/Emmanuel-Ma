@@ -17,49 +17,85 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#music">Music</a>
-      <a href="#course-notes">Course Notes</a>
     </nav>
     <section id="about" class="about">
-      <div class="image-container">
-        <div class="cube-container">
-          <div class="cube outer-cube">
-            <div class="face front"></div>
-            <div class="face back"></div>
-            <div class="face right"></div>
-            <div class="face left"></div>
-            <div class="face top"></div>
-            <div class="face bottom"></div>
-            <div class="inner-cube-wrapper">
-              <div class="inner-cube">
-                <div class="face front"></div>
-                <div class="face back"></div>
-                <div class="face right"></div>
-                <div class="face left"></div>
-                <div class="face top"></div>
-                <div class="face bottom"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      
       <div class="links-container">
         <a  href="https://www.linkedin.com/in/emmanuel-ma/">Linkedin</a>
         <a href="https://github.com/emmanuel-bob-ma-joey" target="_blank">Github</a>
       </div>
       <div class="intro-text">
         <p class="animate-me">
-          Hi I'm Emmanuel, I'm a 4th year software engineering student at McGill University. Here are some of the things I'm currently working on:
-
+          Hi I'm Emmanuel, a software engineer at ADP working on WFN Launchpad — helping new clients onboard smoothly to our systems. I graduated from McGill with a degree in Computer Science and philosophy minor. Asides from building products, I enjoy long distance running, table tennis and playing the piano. My current projects are: 
         </p>
         <ul >
-          <li ><a class="animate-me" href="https://knowledge-graph-mu.vercel.app/" target="_blank">Knowledge graph generator</a></li>
+          <!-- <li ><a class="animate-me" href="https://knowledge-graph-mu.vercel.app/" target="_blank">Knowledge graph generator</a></li>
           <li ><a class="animate-me" href="https://www.youtube.com/watch?v=BHcg0QS_8UI&ab_channel=LucasAntonioTujan" target="_blank">Mendelssohn - Etude Op. 104 No. 1</a></li>
           <li ><a class="animate-me" href="https://www.youtube.com/watch?v=KzJYbaAp7eQ&t=1122s&ab_channel=AshishXiangyiKumar" target="_blank">Chopin - Ballade No. 1 in G minor Op. 23</a></li>
-          <li class="animate-me">Sub 18:30 5k</li>
+          <li class="animate-me">Sub 18:30 5k</li> -->
+           <li class="animate-me">Training for the <a href="https://www.torontowaterfrontmarathon.com/" target="_blank">Toronto Waterfront Marathon</a></li>
+           <li class="animate-me">Practicing <a href="https://www.youtube.com/watch?v=GfgBORsUhW4&list=RDGfgBORsUhW4&start_radio=1" target="_blank">Liszt's Piano Sonata in B Minor</a></li>
+           <li class="animate-me">Learning about cool things we can do with <a href="https://en.wikipedia.org/wiki/Abstract_syntax_tree" target="_blank">Abstract Syntax Trees</a></li>
         </ul>
+      </div>
+      
+      <div class="strava-container">
+        <div class="strava-summary-widget">
+          <div class="strava-header">
+            <h3>Recent Activity Summary</h3>
+            <div class="time-toggle">
+              <button class="time-btn active" data-period="week">This Week</button>
+              <button class="time-btn" data-period="month">This Month</button>
+              <button class="time-btn" data-period="bestefforts">Best Efforts</button>
+            </div>
+          </div>
+          
+          <div class="strava-stats">
+            <div class="stat-card">
+              <div class="stat-icon">🏃</div>
+              <div class="stat-content">
+                <div class="stat-number" id="total-activities">-</div>
+                <div class="stat-label">Activities</div>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">📏</div>
+              <div class="stat-content">
+                <div class="stat-number" id="total-distance">-</div>
+                <div class="stat-label">Distance (km)</div>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">⏱️</div>
+              <div class="stat-content">
+                <div class="stat-number" id="total-time">-</div>
+                <div class="stat-label">Time</div>
+              </div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-icon">⚡</div>
+              <div class="stat-content">
+                <div class="stat-number" id="total-pace">-</div>
+                <div class="stat-label">Avg Pace</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="strava-recent">
+            <h4>Recent Activities</h4>
+            <div class="activities-list" id="activities-list">
+              <div class="loading">Loading activities...</div>
+            </div>
+          </div>
+          
+          <div class="strava-footer">
+            <a href="https://www.strava.com/athletes/83392623" target="_blank" class="strava-link">
+              View on Strava →
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     <section id="experience" class="timeline">
@@ -93,33 +129,16 @@
             <img src="assets/images/ADP.png" alt="ADP Logo" class="company-logo" />
             <!-- Add this line -->
             <h3>Associate Application Developer</h3>
-            <span>ADP, Incoming</span>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-content animate-me">
-            <h3>Workshop Lead</h3>
-            <span>Compete McGill, Sep 2023</span>
-          </div>
-        </li>
-        <li class="hide">
-          <div class="timeline-content">
-            <h3>Job Title 1</h3>
-            <span>Company Name, Dates</span>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-content animate-me">
-            <h3>VP Events</h3>
-            <span>Classical Music Club, Sep 2023</span>
+            <span>ADP, July 2024 - present</span>
+            <p>Building self-service onboarding tools that help implementation specialists serve enterprise clients faster.</p>
           </div>
         </li>
         <li>
           <div class="timeline-content animate-me">
             <img src="assets/images/ADP.png" alt="ADP Logo" class="company-logo" />
             <h3>Global Product and Technology Intern</h3>
-            <span>ADP, June-Aug 2023</span>
-            <p>Optimized ML solutions for client onboarding.</p>
+            <span>ADP, June - August 2023</span>
+            <p>Built machine learning models for tax policy classification in document extraction pipelines.</p>
           </div>
         </li>
         <li class="hide">
@@ -128,7 +147,12 @@
             <span>Company Name, Dates</span>
           </div>
         </li>
-
+        <li class="hide">
+          <div class="timeline-content">
+            <h3>Job Title 4</h3>
+            <span>Company Name, Dates</span>
+          </div>
+        </li>
         <li>
           <div class="timeline-content animate-me">
             <img src="assets/images/MDSA.webp" alt="ADP Logo" class="company-logo" />
@@ -141,24 +165,6 @@
             <p>
               Implemented end-to-end chatbot speech recognition capabilities.
             </p>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-content animate-me">
-            <h3>Computer Science Helpdesk Tutor</h3>
-            <span>CSUS McGill, Jan 2022</span>
-          </div>
-        </li>
-        <li class="hide">
-          <div class="timeline-content">
-            <h3>1</h3>
-            <span>CSUS McGill, Jan 2023</span>
-          </div>
-        </li>
-        <li>
-          <div class="timeline-content animate-me">
-            <h3>Development Coordinator</h3>
-            <span>Enactus McGill, Jan 2021</span>
           </div>
         </li>
         <!-- Repeat for other experiences -->
@@ -253,8 +259,8 @@
             you add a little fortissimo on the arpeggiated B♭ scale."</em
           >
         </div>
-        <div class="music-links ">
-          <p class="animate-me">
+        <!-- <div class="music-links "> -->
+          <!-- <p class="animate-me">
             <a
               href="https://www.youtube.com/watch?v=GbP8dZ76DBw&feature=youtu.be"
               target="_blank"
@@ -262,7 +268,7 @@
               Destenay, trio in b minor for piano, oboe and clarinet, op.27
             </a>
             - Oboist: Tommy He, Clarinetist: Jihoon Jeon
-          </p>
+          </p> -->
           <!-- <p class="animate-me">
             Khachaturian - Trio for Violin, Clarinet and Piano - Clarinetist:
             Jihoon Jeon, Violinist: Zein Nakhleh
@@ -281,7 +287,7 @@
             Your browser does not support the audio element.
           </audio> -->
           <!-- <a class="animate-me" href="data/Mvt-3.wav" target="_blank"  style="display: block"> 3rd Movement </a> -->
-          <p class="animate-me">
+          <!-- <p class="animate-me">
             <a href="https://www.youtube.com/watch?v=nyrs6DvTErQ" isExternal>
               Johannes Brahms - Clarinet Sonata No. 1, Op. 120 II. Andante un
               poco adagio
@@ -295,14 +301,14 @@
               >Arutiunian - Trumpet Concerto in A♭ major</a
             >
             - Trumpeter: Thien Pham
-          </p>
-        </div>
+          </p> -->
+        <!-- </div> -->
       </div>
     </section>
-    <section id="course-notes">
+    <!-- <section id="course-notes"> -->
       <!-- <h1>Notes</h1>
       <p>(I promise I took notes, will add them at a later date)</p> -->
-    </section>
+    <!-- </section> -->
 
     <!-- <p class="animate-me">Rachmaninoff: Piano Sonata No.2, Op.36</p>
     <p class="animate-me">Liszt: Sonata in B Minor</p>
@@ -317,6 +323,5 @@
     <p class="animate-me">Muse - Supermassive Black Hole</p> -->
 
     <script src="js/index.js"></script>
-<script src="js/cube-interaction.js"></script>
   </body>
 </html>
