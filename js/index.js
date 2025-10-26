@@ -187,9 +187,15 @@ async function loadStravaData(period) {
     // Show loading state
     showStravaLoading();
 
+    // Determine the API URL based on environment
+    const apiUrl =
+      window.location.hostname === "localhost"
+        ? "http://localhost:3000/strava-api"
+        : "https://emmanuelma.com/strava-api";
+
     if (period === "bestefforts") {
       // Load best efforts data
-      const response = await fetch("http://localhost:3000/strava-api", {
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -222,7 +228,7 @@ async function loadStravaData(period) {
       updateStravaWidget(processedData);
     } else {
       // Load regular period data
-      const response = await fetch("http://localhost:3000/strava-api", {
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
