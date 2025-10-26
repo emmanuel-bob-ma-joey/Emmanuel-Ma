@@ -191,7 +191,7 @@ async function loadStravaData(period) {
     const apiUrl =
       window.location.hostname === "localhost"
         ? "http://localhost:3000/strava-api"
-        : "https://emmanuelma.com/strava-api";
+        : `${window.location.origin}/strava-api`;
 
     if (period === "bestefforts") {
       // Load best efforts data
