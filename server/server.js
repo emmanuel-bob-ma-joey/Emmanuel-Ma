@@ -9,7 +9,30 @@ const PORT = process.env.PORT || 3000;
 const strava_client_id = process.env.STRAVA_CLIENT_ID;
 const strava_client_secret = process.env.STRAVA_CLIENT_SECRET;
 
-app.use(cors());
+// Configure CORS - allow your domains and localhost
+const allowedOrigins = [
+  "https://emmanuelma.com",
+  "https://www.emmanuelma.com",
+  "http://localhost:3000",
+  "http://127.0.0.1:3000",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "OPTIONS"],
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -75,6 +98,11 @@ function isTokenExpired() {
   const fiveMinutesFromNow = Date.now() + 5 * 60 * 1000;
   return tokenExpiresAt < fiveMinutesFromNow;
 }
+
+// Handle preflight requests
+app.options("/strava-api", (req, res) => {
+  res.status(200).end();
+});
 
 // Strava API endpoint
 app.post("/strava-api", async (req, res) => {
